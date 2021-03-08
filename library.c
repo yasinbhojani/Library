@@ -2,6 +2,7 @@
 void printInfo();
 void paymentPortal();
 void invoice();
+
 struct details
 {
     char bookName[40], authorName[20];
@@ -113,7 +114,7 @@ void invoice()
     printf("Book name    : %s", user.bookName);
     printf("Author       : %s", user.authorName);
     printf("Units Bought : %d\n", user.numberOfCopies);
-    printf("Unit Price   : %d\n", user.price);
+    printf("Unit Price   : %.0f\n", user.price);
     printf("Total Price  : %d\n", user.totalPrice);
     printf("Discount     : %d\n", user.discountGiven);
     printf("Amount Paid  : %d\n", user.finalPrice);
