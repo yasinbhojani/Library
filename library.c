@@ -5,8 +5,9 @@ void invoice();
 struct details
 {
     char bookName[40], authorName[20];
-    int price, numberOfCopies, totalPrice;
-    int discountTemp, discountGiven, finalPrice;
+    int numberOfCopies, totalPrice;
+    float discountTemp, price;
+    int  discountGiven, finalPrice;
     long long int cardNumber;
     int pin, count;
 }user;
@@ -21,7 +22,7 @@ int main()
     printf("Author name : ");    
     fgets(user.authorName, sizeof(user.authorName), stdin);
     printf("Price       : ");
-    scanf("%d", &user.price);
+    scanf("%f", &user.price);
     printf("Number of copies to be purchased : ");
     scanf("%d", &user.numberOfCopies);
     user.totalPrice = user.numberOfCopies * user.price;
@@ -59,7 +60,7 @@ int main()
 void printInfo()
 {
     printf("\n\n\t\tPricing\n\n");
-    printf("Unit price     : %d\n", user.price);
+    printf("Unit price     : %.0f\n", user.price);
     printf("Total Price    : %d\n", user.totalPrice);
     printf("Discount       : %d\n", user.discountGiven);
     printf("Payable amount : %d\n", user.finalPrice);
